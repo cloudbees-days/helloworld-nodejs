@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
     skipDefaultCheckout true
   }
-  stages {
+    stage('Test') {
       agent { label 'nodejs-app' }
       steps {
         checkout scm
@@ -13,5 +13,5 @@ pipeline {
           sh 'node --version'
         }
       }
-  }
+    }
 }
