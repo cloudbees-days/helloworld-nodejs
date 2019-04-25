@@ -5,9 +5,6 @@ pipeline {
     skipDefaultCheckout true
   }
   stages {
-    stage('init'){
-      sh 'java -version'
-    }
     stage('Test') {
       steps {
         checkout scm
