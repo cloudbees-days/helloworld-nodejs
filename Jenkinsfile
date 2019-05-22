@@ -11,6 +11,7 @@ pipeline {
         container('nodejs') {
           echo 'Hello World!'   
           sh 'node --version'
+          publishEvent simpleEvent('hello-api-deploy-event')
         }
       }
     }
