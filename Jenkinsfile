@@ -1,15 +1,19 @@
 pipeline {
   agent none
+  options { 
+    buildDiscarder(logRotator(numToKeepStr: '2'))
+    skipDefaultCheckout true
+  }
   stages {
-    stage('Test'){
-      agent{ label 'nodejs-app'}
+    stage('Test') {
+      agent { label 'nodejs-app' }
       steps {
-        sh 'java -version'
-        container('nodejs'){
-        echo 'Hello World!'
-        sh 'node --version'
-      } 
-     }
+        checkout scm
+        container('nodejs') {
+          echo 'Hello World!'   
+          sh 'node --version'
+        }
+      }
     }
-  } 
+  }
 }
