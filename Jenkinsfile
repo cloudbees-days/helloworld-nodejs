@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('Test'){
       agent{ label 'nodejs-app'}
-    stage('say Hello'){
       steps {
         sh 'java -version'
         container('nodejs'){
