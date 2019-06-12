@@ -5,7 +5,8 @@ pipeline {
       agent{ label 'nodejs-app'}
     stage('say Hello'){
       steps {
-        container('nodejs')
+        sh 'java -version'
+        container('nodejs'){
         echo 'Hello World!'
         sh 'java -version'
       } 
