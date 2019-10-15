@@ -7,5 +7,11 @@ pipeline {
         sh 'java -version'
       }
     }
+    stage('Say Hello Again') {
+      steps {
+        echo 'Hello World Again!'   
+        sh 'java -version'
+      }
+    }
   }
 }
