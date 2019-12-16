@@ -11,7 +11,8 @@ pipeline {
           label 'nodejs-app-pod'
           yamlFile 'nodejs-pod.yaml'
         }
-       }
+      }
+    }
     }
     stage('Build and Push Image') {
       when {
