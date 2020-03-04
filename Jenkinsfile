@@ -7,7 +7,7 @@ pipeline {
          sh 'java -version'
          container('nodejs') {
           echo 'Hello World!'
-          sh 'node -version'
+          sh 'node --version'
       }
     }
    }
