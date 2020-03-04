@@ -1,7 +1,7 @@
 pipeline {
   agent none 
   options {
-    buildDescarder(logRotator(numToKeepStr: '2'))
+    buildDiscarder(logRotator(numToKeepStr: '2'))
     skipDefaultCheckout true
   }
   stages {
