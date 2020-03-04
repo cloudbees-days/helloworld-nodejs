@@ -1,7 +1,7 @@
 FROM node:10.9.0-alpine
 
-RUN npm install express
-RUN npm install pug --save
+RUN npm --verbose install express
+RUN npm --verbose install pug --save
 
 ARG buildNumber="NOT_SET"
 ARG shortCommit="NOT_SET"
