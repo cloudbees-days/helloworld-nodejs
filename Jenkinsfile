@@ -8,10 +8,8 @@ pipeline {
     stage('Test') {
       steps {
         checkout scm
-        container('nodejs') {
-          echo 'Hello Development World!'   
-          sh 'node --version'
-        }
+        echo 'Hello Development World!'   
+        sh 'node --version'
       }
     }
     stage('Build and Push Image') {
