@@ -7,7 +7,6 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        checkout scm
         echo 'Hello Development World!'   
         sh 'node --version'
       }
