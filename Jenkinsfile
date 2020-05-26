@@ -6,9 +6,18 @@ pipeline {
   }
   stages {
     stage('Test') {
+      agent {
+        kubernetes {
+          label 'nodejs-app-pod-2'
+          yamlFile 'nodejs-pod.yaml'
+        }
+      }
       steps {
-        echo 'Hello Development World!'   
-        sh 'node --version'
+        checkout scm
+        container('nodejs') {
+          echo 'Hello Development World!'   
+          sh 'node --version'
+        }
       }
     }
     stage('Build and Push Image') {
